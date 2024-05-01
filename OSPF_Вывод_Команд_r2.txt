@@ -1,0 +1,13 @@
+$ vagrant ssh r2
+[vagrant@r2 ~]$ sudo -i
+[root@r2 ~]# ip r s
+default via 10.0.2.2 dev eth0 proto dhcp metric 100 
+10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.15 metric 100 
+172.20.10.0/24 via 192.168.0.1 dev eth2 proto zebra metric 20 
+172.20.20.0/24 dev eth1 proto kernel scope link src 172.20.20.1 metric 101 
+172.20.30.0/24 via 192.168.100.1 dev eth3 proto zebra metric 20 
+192.168.0.0/30 dev eth2 proto kernel scope link src 192.168.0.2 metric 102 
+192.168.100.0/30 dev eth3 proto kernel scope link src 192.168.100.2 metric 103 
+192.168.200.0/30 proto zebra metric 20 
+	nexthop via 192.168.0.1 dev eth2 weight 1 
+	nexthop via 192.168.100.1 dev eth3 weight 
